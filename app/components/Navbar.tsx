@@ -8,7 +8,26 @@ const Navbar = async () => {
     <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
       <nav className="flex justify-between items-center text-black">
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={144} height={30} />
+          {/* <Image src="/logo.png" alt="logo" width={144} height={30} /> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="45 0 500 10"
+            width="144"
+            height="30"
+          >
+            <text
+              x="40"
+              y="30"
+              fill="#333"
+              fontFamily="font-work-sans"
+              fontSize="75"
+              fontWeight="bold"
+              alignmentBaseline="middle"
+            >
+              <tspan fill="black">Launch</tspan>
+              <tspan fill="purple">Spire</tspan>
+            </text>
+          </svg>
         </Link>
         <div className="flex items-center gap-5">
           {session && session?.user ? (
