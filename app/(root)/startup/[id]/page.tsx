@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import { sanityFetch } from "@/sanity/lib/live";
 import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
@@ -8,6 +7,8 @@ import Image from "next/image";
 import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
+import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 
 const md = markdownit();
 
@@ -15,10 +16,7 @@ export const experimental_ppr = true;
 
 const Startup = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
-  const { data: post } = await sanityFetch({
-    query: STARTUP_BY_ID_QUERY,
-    params: { id },
-  });
+  const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
 
   if (!post) return notFound();
 
