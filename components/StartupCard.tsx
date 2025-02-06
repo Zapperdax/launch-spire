@@ -9,16 +9,8 @@ import { Author, Startup } from "@/sanity/types";
 export type StartupCardType = Omit<Startup, "author"> & { author?: Author };
 
 const StartupCard = ({ post }: { post: StartupCardType }) => {
-  const {
-    _createdAt,
-    views,
-    author,
-    _id,
-    description,
-    image,
-    category,
-    title,
-  } = post;
+  const { _createdAt, views, author, _id, description, link, category, title } =
+    post;
   return (
     <li className="startup-card group">
       <div className="flex-between">
@@ -52,7 +44,7 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
         <p className="startup-card_desc">{description}</p>
 
         <Image
-          src={image || "/logo.png"}
+          src={link || "/logo.png"}
           alt="placeholder"
           className="startup-card_img"
           width={48}

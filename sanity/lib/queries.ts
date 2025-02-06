@@ -12,7 +12,7 @@ export const STARTUP_QUERY =
   views,
   description, 
   category, 
-  image
+  link
 }`);
 
 export const STARTUP_BY_ID_QUERY =
@@ -27,7 +27,7 @@ export const STARTUP_BY_ID_QUERY =
   views,
   description, 
   category, 
-  image,
+  link,
   pitch,
 }`);
 

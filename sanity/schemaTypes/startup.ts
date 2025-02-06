@@ -38,7 +38,7 @@ export const startup = defineType({
         Rule.min(1).max(20).required().error("Please Enter a Category"),
     }),
     defineField({
-      name: "image",
+      name: "link",
       type: "url",
       validation: (Rule) => Rule.required(),
     }),

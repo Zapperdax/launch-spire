@@ -30,7 +30,7 @@ const Startup = async ({ params }: { params: Promise<{ id: string }> }) => {
       </section>
       <section className="section_container">
         <img
-          src={post.image}
+          src={post.link}
           alt="thumbnail"
           className="w-full h-auto rounded-xl"
         />
