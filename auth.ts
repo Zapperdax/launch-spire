@@ -9,7 +9,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   callbacks: {
     async signIn({
       user: { name, email, image },
-      account,
       profile: { id, login, bio },
     }) {
       const existingUser = await client
