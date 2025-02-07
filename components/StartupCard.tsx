@@ -75,7 +75,7 @@ export const StartupCardSkeleton = () => (
   <>
     {[0, 1, 2, 3, 4].map((index) => (
       <li key={cn("skeleton", index)}>
-        <Skeleton className="startup-card_skeleton" />
+        <Skeleton className="startup-card_skeleton mt-5" />
       </li>
     ))}
   </>
