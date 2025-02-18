@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
   // experimental: {
   //   ppr: "incremental",
   // },
+  experimental: {
+    esmExternals: "loose", // Allows mixing ESM & CommonJS
+  },
   devIndicators: {
     appIsrStatus: true,
     buildActivity: true,
